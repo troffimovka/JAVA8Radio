@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
+    Radio radio = new Radio(20);
 
     @Test
     void shouldSetStationWithinRange() {
@@ -17,7 +18,7 @@ class RadioTest {
     @Test
     void shouldSetStationOverRange() {
         Radio radio = new Radio();
-        radio.setCurrentStation(99);
+        radio.setCurrentStation(21);
         assertEquals(0, radio.getCurrentStation());
     }
 
@@ -39,7 +40,7 @@ class RadioTest {
     @Test
     void shouldGoNextStationAfterMaximum() {
         Radio radio = new Radio();
-        radio.setCurrentStation(9);
+        radio.setCurrentStation(20);
         radio.nextStation();
         assertEquals(0, radio.getCurrentStation());
     }
@@ -49,7 +50,7 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
         radio.previousStation();
-        assertEquals(4, radio.getCurrentStation());
+        assertEquals(20, radio.getCurrentStation());
     }
 
     @Test
