@@ -1,4 +1,6 @@
-package ru.netology.domain;
+package ru.netology.constructor;
+
+import java.lang.reflect.Constructor;
 
 public class Radio {
 
@@ -8,6 +10,10 @@ public class Radio {
     private int currentVolume;
     private int maxVolume = 10;
     private int minVolume = 0;
+
+    public Radio(){
+
+    }
 
 
     public int getCurrentStation() {

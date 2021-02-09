@@ -1,35 +1,38 @@
-package ru.netology.domain;
+package ru.netology.constructor;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import ru.netology.domain.Radio;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioTest {
 
+    public RadioTest() {
+    }
+
     @Test
     void shouldSetStationWithinRange() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentStation(8);
         assertEquals(8, radio.getCurrentStation());
     }
 
     @Test
     void shouldSetStationOverRange() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentStation(99);
         assertEquals(0, radio.getCurrentStation());
     }
 
     @Test
     void shouldSetStationBelowRange() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentStation(-1);
         assertEquals(0, radio.getCurrentStation());
     }
     @Test
     void shouldGoNextStationBeforeMaximum() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentStation(5);
         radio.nextStation();
         assertEquals(6, radio.getCurrentStation());
@@ -37,7 +40,7 @@ class RadioTest {
 
     @Test
     void shouldGoNextStationAfterMaximum() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentStation(9);
         radio.nextStation();
         assertEquals(0, radio.getCurrentStation());
@@ -45,7 +48,7 @@ class RadioTest {
 
     @Test
     void shouldGoPrevStationBeforeMinimum() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentStation(5);
         radio.previousStation();
         assertEquals(4, radio.getCurrentStation());
@@ -53,7 +56,7 @@ class RadioTest {
 
     @Test
     void shouldGoPreviousStationAfterMinimum() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentStation(0);
         radio.previousStation();
         assertEquals(9, radio.getCurrentStation());
@@ -61,21 +64,21 @@ class RadioTest {
 
     @Test
     void shouldSetVolumeWithinRange() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentVolume(8);
         assertEquals(8, radio.getCurrentVolume());
     }
 
     @Test
     void shouldSetVolumeOutOfRange() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentVolume(867);
         assertEquals(10, radio.getCurrentVolume());
     }
 
     @Test
     void shouldIncreaseVolumeWithingRange() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentVolume(5);
         radio.increaseVolume();
         assertEquals(6, radio.getCurrentVolume());
@@ -83,7 +86,7 @@ class RadioTest {
 
     @Test
     void shouldIncreaseVolumeOutofRange() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentVolume(10);
         radio.increaseVolume();
         assertEquals(10, radio.getCurrentVolume());
@@ -91,7 +94,7 @@ class RadioTest {
 
     @Test
     void shouldDecreaseVolumeWithingRange() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new ru.netology.domain.Radio();
         radio.setCurrentVolume(5);
         radio.decreaseVolume();
         assertEquals(4, radio.getCurrentVolume());
@@ -99,7 +102,7 @@ class RadioTest {
 
     @Test
     void shouldDecreaseVolumeOutofRange() {
-        Radio radio = new Radio();
+        ru.netology.domain.Radio radio = new Radio();
         radio.decreaseVolume();
         assertEquals(0, radio.getCurrentVolume());
     }
